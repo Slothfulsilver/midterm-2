@@ -4,37 +4,86 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
-import InfoIcon from "@mui/icons-material/Info";
+//import InfoIcon from "@mui/icons-material/Info";
+import Button from "@mui/material/Button";
+import {
+  MuiThemeProvider,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material/styles";
+
+const THEME = createTheme({
+  typography: {
+    fontFamily: "'Orelega One', serif",
+    fontSize: 20,
+    fontWeightLight: 200,
+    fontWeightRegular: 500,
+    fontWeightMedium: 800,
+  },
+  palette: {
+    primary: {
+      main: "#FC94AF",
+      // light: will be calculated from palette.primary.main,
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      main: "#E0C2FF",
+      light: "#F5EBFF",
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: "#47008F",
+    },
+  },
+});
+
+const HOVER = {
+  "&:hover": {
+    transform: "scale(1.2)",
+    transition: "transform 0.2s ease",
+    cursor: "pointer",
+    zIndex: "100",
+  },
+};
 
 export default function Gallery() {
+  <style>
+    @import
+    url('https://fonts.googleapis.com/css2?family=Orelega+One&family=Readex+Pro&display=swap');
+  </style>;
   return (
-    <ImageList sx={{ width: 500, height: 450 }}>
-      <ImageListItem key="Subheader" cols={2}>
-        <ListSubheader component="div">December</ListSubheader>
-      </ImageListItem>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={item.author}
-            actionIcon={
-              <IconButton
-                sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                aria-label={`info about ${item.title}`}
-              >
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+    <ThemeProvider theme={THEME}>
+      <Button variant="contained">Primary</Button>
+      <Button variant="contained" color="secondary" sx={{ ml: 2 }}>
+        Secondary
+      </Button>
+      <ImageList sx={{ width: 500, height: 450 }}>
+        <ImageListItem key="Subheader" cols={2}>
+          <ListSubheader component="div" sx={{ fontSize: 26, marginBottom: 2 }}>
+            Projects
+          </ListSubheader>
         </ImageListItem>
-      ))}
-    </ImageList>
+        {itemData.map((item) => (
+          <ImageListItem sx={HOVER} key={item.img}>
+            <img
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              alt={item.title}
+              loading="lazy"
+            />
+            <ImageListItemBar
+              title={item.title}
+              subtitle={item.author}
+              actionIcon={
+                <IconButton
+                  sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                  aria-label={`info about ${item.title}`}
+                ></IconButton>
+              }
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </ThemeProvider>
   );
 }
 
