@@ -4,7 +4,7 @@ import Project from "./components/project/Project";
 
 <style>
   @import
-  url('https://fonts.googleapis.com/css2?family=Orelega+One&family=Readex+Pro&display=swap');
+  url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Orelega+One&family=Readex+Pro&display=swap');
 </style>;
 
 function App() {
