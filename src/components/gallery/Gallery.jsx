@@ -18,7 +18,7 @@ function view() {
 export default function Gallery() {
   return (
     <ThemeProvider theme={THEME}>
-      <ImageList sx={{ width: 600, height: 550 }}>
+      <ImageList sx={{ width: 500, height: 550 }}>
         <ImageListItem key="Subheader" cols={2}>
           <ListSubheader component="div" sx={{ fontSize: 26, marginBottom: 2 }}>
             Projects

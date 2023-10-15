@@ -1,6 +1,7 @@
 import "./App.css";
 import Gallery from "./components/gallery/Gallery";
-import Project from "./components/project/Project";
+import Header from "./components/header/header";
+//import Project from "./components/project/Project";
 
 <style>
   @import
@@ -10,8 +11,10 @@ import Project from "./components/project/Project";
 function App() {
   return (
     <div className="App">
-      <Gallery></Gallery>
-      <Project></Project>
+      <Header/>
+      <Gallery/>
+      {/* <Project/> */}
+    
     </div>
   );
 }

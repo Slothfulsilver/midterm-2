@@ -1,0 +1,17 @@
+.header img {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    border-radius: 50px;
+    
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+.header h2{
+    vertical-align: middle;
+}
+
