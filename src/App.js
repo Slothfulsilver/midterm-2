@@ -1,5 +1,6 @@
 import "./App.css";
 import Gallery from "./components/gallery/Gallery";
+import Project from "./components/project/Project";
 
 <style>
   @import
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Gallery></Gallery>
+      <Project></Project>
     </div>
   );
 }
