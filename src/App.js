@@ -11,18 +11,27 @@ import { Container } from "@mui/material";
   url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Orelega+One&family=Readex+Pro&display=swap');
 </style>;
 
-function App() {
-  const [backgroundImage, setBackgroundImage] = useState(null); // State for background image
-  const [pTheme, setPTheme] = useState(null); // State for background image
+/**
+ * Profile Web Page App
+ * @author Arturo García Brambila
+ * @author Celia Lucia Castañeda Arizaga
+ * @library MUI https://mui.com/
+ * Interfaces 2nd Midterm Project
+ * Uses different unique Themes for each profile
+ * Profiles include: Name, Profile Picture, About Me, Social Media Links, Projects, CV
+ * @returns <>
+ */
 
-  // Function to set the background image when a different item is clicked
+function App() {
+  const [backgroundImage, setBackgroundImage] = useState(null);
+  const [pTheme, setPTheme] = useState(null);
+
   const setBackgroundFromItem = (item) => {
     setBackgroundImage(item.img);
   };
 
   const changeTheme = (selectedPerson) => {
     setPTheme(selectedPerson);
-    console.log(selectedPerson);
   };
   
   return (

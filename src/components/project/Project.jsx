@@ -5,6 +5,15 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 
+/**
+ * Project Information
+ * @author Celia Lucia Castañeda Arizaga
+ * Presents the selected project's title, date, description in 1 column and the project's image in another column
+ * Uses the current theme for the font color and font type
+ * @param item project information
+ * @returns <Grid> selected project info
+ */
+
 function Project({ item }) {
   const { title, img, date, description } = item;
 
