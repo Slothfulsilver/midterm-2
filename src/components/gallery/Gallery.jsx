@@ -8,6 +8,9 @@ import IconButton from "@mui/material/IconButton";
 import { HOVER, TITLE } from "../../ui/styles.js";
 import { itemData } from "./lucyData.js";
 import Project from "../project/Project.jsx";
+import InfoSocial from "../infoSocial/InfoSocial";
+import "./Gallery.css"
+import { Container } from "@mui/material";
 
 /**
  * Project Gallery
@@ -33,7 +36,8 @@ export default function Gallery({ onItemSelect }) {
   };
 
   return (
-    <>
+    <div>
+      <Container maxWidth={false} sx={{ display: 'flex' }}>
       <ImageList
         sx={{
           width: 500,
@@ -81,6 +85,9 @@ export default function Gallery({ onItemSelect }) {
           </ImageListItem>
         ))}
       </ImageList>
+      <InfoSocial/>
+
+      </Container>
 
       {selectedItem && (
         <Project
@@ -89,6 +96,6 @@ export default function Gallery({ onItemSelect }) {
           onClick={clearSelectedItem}
         />
       )}
-    </>
+    </div>
   );
 }

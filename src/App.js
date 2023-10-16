@@ -4,6 +4,7 @@ import { THEME } from "./ui/Lucy/theme";
 import {THEME2} from "./ui/Arturo/theme";
 import Gallery from "./components/gallery/Gallery";
 import Header from "./components/header/Header";
+import InfoSocial from "./components/infoSocial/InfoSocial";
 import { Container } from "@mui/material";
 
 <style>
@@ -43,7 +44,7 @@ function App() {
           style={{
             backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: "repeat",
-            backgroundSize: "500px",
+            backgroundSize: "600px",
           }}
         >
           <Container
@@ -62,7 +63,7 @@ function App() {
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundRepeat: "repeat",
-          backgroundSize: "500px",
+          backgroundSize: "600px",
         }}
       >
         <Container

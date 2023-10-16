@@ -1,6 +1,6 @@
 import "./Header.css";
 import photo from "../../ui/Lucy/media/Lucy.jpeg";
-import { Container, Typography, Button } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import { TITLE, TEXT } from "../../ui/styles";
 import { useState } from "react";
 
