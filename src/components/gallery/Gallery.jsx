@@ -41,7 +41,6 @@ export default function Gallery({ onItemSelect }) {
       <ImageList
         sx={{
           width: 500,
-          height: 650,
           borderRadius: "16px",
           padding: 3,
         }}
@@ -91,6 +90,7 @@ export default function Gallery({ onItemSelect }) {
 
       {selectedItem && (
         <Project
+          id="test"
           sx={{ margin: 3 }}
           item={selectedItem}
           onClick={clearSelectedItem}
