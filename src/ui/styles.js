@@ -32,7 +32,6 @@ export const TEXT = {
       fontSize: '1rem',
     },
     marginBottom: 1,
-    padding: 2,
     padding: "1rem 2rem",
     borderRadius: "16px",
     backgroundColor: "#FFD9DF",
