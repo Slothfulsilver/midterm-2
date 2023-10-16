@@ -1,26 +1,43 @@
 import * as React from "react";
+import { useState } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
-//import InfoIcon from "@mui/icons-material/Info";
-import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
 import { THEME } from "../../ui/Lucy/theme.js";
 import { HOVER } from "../../ui/styles.js";
 import { itemData } from "./lucyData.js";
-
-function view() {
-  <Button>Hi</Button>;
-}
+import Project from "../project/Project.jsx";
 
 export default function Gallery() {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  // Function to handle the image click and set the selected item
+  const handleImageClick = (item) => {
+    setSelectedItem(item);
+  };
+
+  // Function to clear the selected item
+  const clearSelectedItem = () => {
+    setSelectedItem(null);
+  };
+
   return (
     <ThemeProvider theme={THEME}>
-      <ImageList sx={{ width: 500, height: 550 }}>
+      <ImageList
+        sx={{
+          width: 500,
+          height: 550,
+        }}
+      >
         <ImageListItem key="Subheader" cols={2}>
-          <ListSubheader component="div" sx={{ fontSize: 26, marginBottom: 2 }}>
+          <ListSubheader
+            component="div"
+            sx={{ fontSize: 26, marginBottom: 2 }}
+            color="primary"
+          >
             Projects
           </ListSubheader>
         </ImageListItem>
@@ -33,7 +50,7 @@ export default function Gallery() {
             img={item.img}
             date={item.date}
             description={item.description}
-            onClick={view}
+            onClick={() => handleImageClick(item)}
           >
             <img
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -54,6 +71,14 @@ export default function Gallery() {
           </ImageListItem>
         ))}
       </ImageList>
+
+      {selectedItem && (
+        <Project
+          sx={{ margin: 3 }}
+          item={selectedItem}
+          onClick={clearSelectedItem}
+        />
+      )}
     </ThemeProvider>
   );
 }

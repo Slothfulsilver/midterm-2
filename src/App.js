@@ -1,7 +1,9 @@
+import { ThemeProvider } from "@emotion/react";
+import { THEME } from "./ui/Lucy/theme";
 import "./App.css";
 import Gallery from "./components/gallery/Gallery";
 import Header from "./components/header/header";
-//import Project from "./components/project/Project";
+import { Container } from "@mui/material";
 
 <style>
   @import
@@ -10,12 +12,14 @@ import Header from "./components/header/header";
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Gallery/>
-      {/* <Project/> */}
-    
-    </div>
+    <ThemeProvider theme={THEME}>
+      <div className="App lucy">
+        <Container>
+          <Header />
+          <Gallery />
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 }
 

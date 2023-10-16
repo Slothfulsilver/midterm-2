@@ -1,8 +1,8 @@
 export const HOVER = {
   "&:hover": {
-    transform: "scale(1.2)",
+    transform: "scale(1.16)",
     transition: "transform 0.2s ease",
     cursor: "pointer",
-    zIndex: 100,
+    zIndex: 1000,
   },
 };
