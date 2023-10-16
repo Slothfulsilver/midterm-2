@@ -2,6 +2,14 @@ import './infoSocial.css'
 import { Typography } from '@mui/material';
 import { TITLE, TEXT } from "../../ui/styles";
 
+/**
+ * Career Summary, Main Social Media Links
+ * @author Arturo García Brambila
+ * @author Celia Lucia Castañeda Arizaga
+ * Returns Career Summary data and working social media links
+ * Uses the current theme for the font color and font type
+ * @returns <div> Career Summary + links
+ */
 function InfoSocial() {
     return (
         //Info of the person and their social networks
@@ -22,7 +30,7 @@ function InfoSocial() {
             <br/>
             ｡ﾟ•┈୨♡୧┈• ｡ﾟ
             <br/> Intel GDC (2023)
-            
+
             <br/> Debug Tools Development Intern
             </Typography>
             <Typography color="secondary" marginInline={3} sx={TEXT}>
