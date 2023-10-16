@@ -10,6 +10,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { THEME } from "../../ui/Lucy/theme.js";
 import { HOVER } from "../../ui/styles.js";
 import { itemData } from "./lucyData.js";
+import "./Gallery.css"
 
 function view() {
   <Button>Hi</Button>;
@@ -17,7 +18,8 @@ function view() {
 
 export default function Gallery() {
   return (
-    <ThemeProvider theme={THEME}>
+    <div className="gallery">
+     <ThemeProvider theme={THEME}>
       <ImageList sx={{ width: 500, height: 550 }}>
         <ImageListItem key="Subheader" cols={2}>
           <ListSubheader component="div" sx={{ fontSize: 26, marginBottom: 2 }}>
@@ -55,5 +57,7 @@ export default function Gallery() {
         ))}
       </ImageList>
     </ThemeProvider>
+    </div>
+   
   );
 }
