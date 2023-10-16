@@ -1,9 +1,9 @@
 .header img {
     width: 200px;
-    height: 200px;
-    padding: 5px;
+    height: 250px;
+    padding: 15px;
+    padding-top: 25px;
     border-radius: 50px;
-    
 }
 
 .header{

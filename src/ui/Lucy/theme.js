@@ -16,7 +16,7 @@ export const THEME = createTheme({
       // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
-      main: "#E5ACB6",
+      main: "#b54e5e",
       light: "#FFC0CB ",
       // dark: will be calculated from palette.secondary.main,
       contrastText: "#FFD9DF ",

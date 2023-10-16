@@ -5,12 +5,18 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 
-function Project({ item, onClose }) {
+function Project({ item }) {
   const { title, img, date, description } = item;
 
   return (
     <Grid item xs={12} md={6}>
-      <Card sx={{ display: "flex" }}>
+      <Card
+        sx={{
+          display: "flex",
+          backgroundColor: "#FFD9DF",
+          borderRadius: "16px",
+        }}
+      >
         <CardContent sx={{ flex: 1, margin: 1 }}>
           <Typography
             sx={{ margin: 2 }}

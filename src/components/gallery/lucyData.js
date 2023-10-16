@@ -1,6 +1,6 @@
 import ar from "../../ui/Lucy/media/ARApp1.jpeg";
-import animam from "../../ui/Lucy/media/Animam Immortalem.png";
-import body from "../../ui/Lucy/media/Cuerpo Foto 2.jpg";
+import animam from "../../ui/Lucy/media/AnimamImm.png";
+import body from "../../ui/Lucy/media/Cuerpo.jpg";
 import donut from "../../ui/Lucy/media/RealltHighRender.png";
 import raytracer from "../../ui/Lucy/media/RayTracer1.jpeg";
 import riiaa from "../../ui/Lucy/media/riiaa.jpg";
