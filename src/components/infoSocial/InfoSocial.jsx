@@ -22,6 +22,7 @@ function InfoSocial() {
             <br/>
             ｡ﾟ•┈୨♡୧┈• ｡ﾟ
             <br/> Intel GDC (2023)
+            
             <br/> Debug Tools Development Intern
             </Typography>
             <Typography color="secondary" marginInline={3} sx={TEXT}>

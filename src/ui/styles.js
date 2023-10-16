@@ -13,7 +13,10 @@ export const HOVER = {
 
 export const TITLE = {
   "&": {
-    fontSize: 26,
+    fontSize: "1.7rem",
+    '@media (max-width:800px)': {
+      fontSize: '1.2rem',
+    },
     marginBottom: 1,
     padding: "1px 16px",
     borderRadius: "16px",
@@ -24,11 +27,43 @@ export const TITLE = {
 
 export const TEXT = {
   "&": {
-    fontSize: 22,
+    fontSize: "1.4rem",
+    '@media (max-width:800px)': {
+      fontSize: '1rem',
+    },
+    marginBottom: 1,
+    padding: 2,
+    padding: "1rem 2rem",
+    borderRadius: "16px",
+    backgroundColor: "#FFD9DF",
+    fontWeight: "bold",
+  },
+};
+
+export const TITLE2 = {
+  "&": {
+    fontSize: "1.8rem",
+    '@media (max-width:800px)': {
+      fontSize: '1.2rem',
+    },
+    marginBottom: 1,
+    padding: "1px 16px",
+    borderRadius: "16px",
+    backgroundColor: "#000000",
+    fontWeight: "bold",
+  },
+};
+
+export const TEXT2 = {
+  "&": {
+    fontSize: "1.4rem",
+    '@media (max-width:800px)': {
+      fontSize: '1rem',
+    },
     marginBottom: 1,
     padding: "2px 10px",
     borderRadius: "16px",
-    backgroundColor: "#FFD9DF",
+    backgroundColor: "#000000",
     fontWeight: "bold",
   },
 };

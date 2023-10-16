@@ -1,8 +1,11 @@
 import "./Header.css";
 import photo from "../../ui/Lucy/media/Lucy.jpeg";
 import { Typography, Button } from "@mui/material";
-import { TITLE, TEXT } from "../../ui/styles";
+import { TITLE, TEXT, TITLE2, TEXT2 } from "../../ui/styles";
 import { useState } from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import { THEME } from "../../ui/Lucy/theme";
+import { THEME2 } from "../../ui/Arturo/theme";
 
 /**
  * Profile Header
@@ -30,34 +33,38 @@ function Header({ onPersonSelect }) {
 
   return (
     <div className="header">
-      <Button onClick={handleClickLucy}>
-        <img src={photo} alt="Lucy" />
-      </Button>
-      <div className="info">
-        <Typography color="primary" margin={3} marginTop={1} sx={TITLE}>
-          Celia Lucia Castañeda Arizaga
-        </Typography>
-        <Typography color="secondary" marginInline={3} sx={TEXT}>
-          ｡ﾟ•┈୨♡୧┈• ｡ﾟ
-          <br/> Hi! I´m Lucy :) 
-          <br/> I love learning and giving my all! Some of my hobbies are dancing, drawing and lifting weights.
-          <br/> Surprisingly, my favourite color isn't pink.
-        </Typography>
-      </div>
-      <div className="info">
-      <Typography color="primary" margin={3} marginTop={1} sx={TITLE}>
-        Arturo García Brambila
-      </Typography>
-      <Typography color="secondary" marginInline={3} sx={TEXT}>
-          ｡ﾟ•┈୨♡୧┈• ｡ﾟ
-          <br/> Hi! I´m Lucy :) 
-          <br/> I love learning and giving my all! Some of my hobbies are dancing, drawing and lifting weights.
-          <br/> Surprisingly, my favourite color isn't pink.
-        </Typography>
-      </div>
-      <Button onClick={handleClickArtu}>
-        <img src={photo} alt="Arturo" />
-      </Button>
+      <ThemeProvider theme={THEME}>
+        <Button onClick={handleClickLucy}>
+          <img src={photo} alt="Lucy" />
+        </Button>
+        <div className="info">
+          <Typography color="primary" margin={3} marginTop={1} sx={TITLE}>
+            Celia Lucia Castañeda Arizaga
+          </Typography>
+          <Typography color="secondary" marginInline={3} sx={TEXT}>
+            ｡ﾟ•┈୨♡୧┈• ｡ﾟ
+            <br/> Hi! I´m Lucy :) 
+            <br/> I love learning and giving my all! Some of my hobbies are dancing, drawing and lifting weights.
+            <br/> Surprisingly, my favourite color isn't pink.
+          </Typography>
+        </div>
+      </ThemeProvider>
+      <ThemeProvider theme={THEME2}>
+        <div className="info">
+          <Typography color="primary" margin={3} marginTop={1} sx={TITLE2}>
+            Arturo García Brambila
+          </Typography>
+          <Typography color="secondary" marginInline={3} sx={TEXT2}>
+            ARTURO INFO
+            <br/> Hi! I´m Lucy :) 
+            <br/> I love learning and giving my all! Some of my hobbies are dancing, drawing and lifting weights.
+            <br/> Surprisingly, my favourite color isn't pink.
+          </Typography>
+        </div>
+        <Button onClick={handleClickArtu}>
+          <img src={photo} alt="Arturo" />
+        </Button>
+      </ThemeProvider>
     </div>
   );
 }

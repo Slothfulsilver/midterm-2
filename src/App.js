@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import { THEME } from "./ui/Lucy/theme";
-import {THEME2} from "./ui/Arturo/theme";
+import { THEME2 } from "./ui/Arturo/theme";
 import Gallery from "./components/gallery/Gallery";
 import Header from "./components/header/Header";
-import InfoSocial from "./components/infoSocial/InfoSocial";
 import { Container } from "@mui/material";
 
 <style>

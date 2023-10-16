@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import { TITLE, TEXT } from "../../ui/styles";
 
 /**
  * Project Information
@@ -28,17 +29,17 @@ function Project({ item }) {
       >
         <CardContent sx={{ flex: 1, margin: 1 }}>
           <Typography
-            sx={{ margin: 2 }}
+            sx={TITLE}
             component="h2"
             variant="h5"
             color="primary"
           >
             {title}
           </Typography>
-          <Typography sx={{ margin: 2 }} variant="subtitle1" color="secondary">
+          <Typography sx={TEXT} variant="subtitle1" color="secondary">
             {date}
           </Typography>
-          <Typography sx={{ margin: 4 }} variant="subtitle1" paragraph>
+          <Typography sx={TEXT} variant="subtitle1" color="secondary.dark" paragraph>
             {description}
           </Typography>
         </CardContent>
