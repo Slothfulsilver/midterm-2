@@ -48,7 +48,7 @@ function App() {
         >
           <Container
             maxWidth="xl"
-            style={{ background: "linear-gradient(to bottom, #FFC0CB, #E0115F" }}
+            style={{ background: "linear-gradient(to bottom, #000000, #F18FA0" }}
           >
             <Header onPersonSelect={changeTheme} />
             <Gallery onItemSelect={setBackgroundFromItem} />
