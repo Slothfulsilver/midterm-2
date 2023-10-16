@@ -21,3 +21,14 @@ export const TITLE = {
     fontWeight: "bold",
   },
 };
+
+export const TEXT = {
+  "&": {
+    fontSize: 22,
+    marginBottom: 1,
+    padding: "2px 10px",
+    borderRadius: "16px",
+    backgroundColor: "#FFD9DF",
+    fontWeight: "bold",
+  },
+};

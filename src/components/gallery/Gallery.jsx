@@ -5,8 +5,6 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
-import { ThemeProvider } from "@mui/material/styles";
-import { THEME } from "../../ui/Lucy/theme.js";
 import { HOVER, TITLE } from "../../ui/styles.js";
 import { itemData } from "./lucyData.js";
 import Project from "../project/Project.jsx";
