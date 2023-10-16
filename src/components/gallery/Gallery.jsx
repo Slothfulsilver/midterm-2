@@ -41,7 +41,7 @@ export default function Gallery({ onItemSelect }) {
       <ImageList
         sx={{
           width: 500,
-          height: 550,
+          height: 575,
           borderRadius: "16px",
           padding: 3,
         }}
