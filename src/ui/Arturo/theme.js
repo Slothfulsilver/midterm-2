@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-export const THEME = createTheme({
+export const THEME2 = createTheme({
   typography: {
     fontFamily: "'Delicious Handrawn', cursive",
     fontSize: 20,

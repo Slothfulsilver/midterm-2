@@ -15,3 +15,7 @@
     vertical-align: middle;
 }
 
+.mirrored{
+    align-self:last baseline
+}
+
