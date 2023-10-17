@@ -1,6 +1,7 @@
 import './infoSocial.css'
 import * as React from 'react';
-import { Alert, Button, CircularProgress, Popover, Typography } from '@mui/material';
+import { Alert, Badge, Button, CircularProgress, Popover, Typography } from '@mui/material';
+import MailIcon from '@mui/icons-material/Mail';
 import { TITLE, TEXT } from "../../ui/styles";
 
 /**
@@ -59,6 +60,9 @@ function InfoSocial() {
             <br/>
             <Button aria-describedby={id} variant="contained" onClick={handleClick}>
                 Free iPod nano
+                <Badge badgeContent={999} color="secondary">
+                    <MailIcon color="action" />
+                </Badge>
             </Button>
             <Popover
             id={id}
@@ -71,10 +75,10 @@ function InfoSocial() {
             }}
             >
             <Alert severity="error">Take action</Alert>
-            <Typography sx={{ p: 2 }}>Your computer has been infected, pay $9999 to get your data back!</Typography>
+            <Typography sx={{ p: 2 }}>Your computer has been INFECTED, PAY $9999 to get your DATA back!!!</Typography>
             </Popover>
             <Typography color="secondary" marginInline={3} marginY={6} sx={TEXT}>
-                <CircularProgress />...       Downloading the book War and Peace by Leo Tolstoy and converting it to hex using the Big Mac Index
+                <CircularProgress />...       Downloading the book of War and Peace by Leo Tolstoy and converting it to hex using the Big Mac Index
             </Typography>
         </div>
     );
