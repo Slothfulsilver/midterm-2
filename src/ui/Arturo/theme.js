@@ -21,5 +21,9 @@ export const THEME2 = createTheme({
       // dark: will be calculated from palette.secondary.main,
       contrastText: "#E7E7A1",
     },
+    background: {
+      default: "#000000",
+      paper: "#FFFFFF",
+    },
   },
 });

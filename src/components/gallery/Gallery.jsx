@@ -5,33 +5,42 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
-import { ThemeProvider } from "@mui/material/styles";
-import { THEME } from "../../ui/Lucy/theme.js";
 import { HOVER, TITLE } from "../../ui/styles.js";
 import { itemData } from "./lucyData.js";
 import Project from "../project/Project.jsx";
+import InfoSocial from "../infoSocial/InfoSocial";
+import "./Gallery.css"
+import { Container } from "@mui/material";
+
+/**
+ * Project Gallery
+ * @author Celia Lucia Castañeda Arizaga
+ * Project gallery, each item includes title, subtitle and image.
+ * When the cursor hovers on an item, the item expands.
+ * When an item is clicked an information section about the item clicked is displayed.
+ * Uses the current theme for the font color and font type
+ * @param onItemSelect state function that changes when an item is clicked on
+ * @returns <ThemeProvider> Gallery of Images
+ */
 
 export default function Gallery({ onItemSelect }) {
   const [selectedItem, setSelectedItem] = useState(null);
 
-  // Function to handle the image click and set the selected item
   const handleImageClick = (item) => {
     setSelectedItem(item);
-    // Call the parent component's function to set the background image
     onItemSelect(item);
   };
 
-  // Function to clear the selected item
   const clearSelectedItem = () => {
     setSelectedItem(null);
   };
 
   return (
-    <ThemeProvider theme={THEME}>
+    <div>
+      <Container maxWidth={false} sx={{ display: 'flex' }}>
       <ImageList
         sx={{
           width: 500,
-          height: 550,
           borderRadius: "16px",
           padding: 3,
         }}
@@ -75,6 +84,9 @@ export default function Gallery({ onItemSelect }) {
           </ImageListItem>
         ))}
       </ImageList>
+      <InfoSocial/>
+
+      </Container>
 
       {selectedItem && (
         <Project
@@ -83,6 +95,6 @@ export default function Gallery({ onItemSelect }) {
           onClick={clearSelectedItem}
         />
       )}
-    </ThemeProvider>
+    </div>
   );
 }
