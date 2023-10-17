@@ -6,9 +6,6 @@ import Gallery from "./components/gallery/Gallery";
 import Header from "./components/header/Header";
 import { BottomNavigation, BottomNavigationAction, Container } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
-import WorkIcon from '@mui/icons-material/Work';
-import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 
 <style>
   @import
@@ -66,9 +63,7 @@ function App() {
         setValue(newValue);
       }}
     >
-      <BottomNavigationAction label="About Me" icon={<SentimentSatisfiedAltIcon />} />
-      <BottomNavigationAction label="Career" icon={<WorkIcon />} />
-      <BottomNavigationAction label="Projects" icon={<LaptopChromebookIcon />} />
+      <BottomNavigationAction label="Like" icon={<FavoriteIcon />} />
     </BottomNavigation>
       </ThemeProvider>
     ):(
@@ -96,9 +91,7 @@ function App() {
         setValue(newValue);
       }}
     >
-      <BottomNavigationAction label="About Me" icon={<SentimentSatisfiedAltIcon />} />
-      <BottomNavigationAction label="Career" icon={<WorkIcon />} />
-      <BottomNavigationAction label="Projects" icon={<LaptopChromebookIcon />} />
+      <BottomNavigationAction label="Like" icon={<FavoriteIcon />} />
     </BottomNavigation>
       </ThemeProvider>
     )}
