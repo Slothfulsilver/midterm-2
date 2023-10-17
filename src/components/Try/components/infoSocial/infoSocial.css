@@ -1,0 +1,17 @@
+.container{
+    width: 60%;
+    margin-left: 10px;
+    margin-right: -4%;
+    padding: 5%;
+    padding-top: 4%;
+}
+
+.container .info {
+    border: 5px solid;
+    
+}
+
+.socials {
+    margin-top: 50px;
+    border: 5px solid;
+}

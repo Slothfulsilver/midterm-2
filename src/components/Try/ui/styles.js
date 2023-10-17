@@ -13,7 +13,7 @@ export const HOVER = {
 
 export const TITLE = {
   "&": {
-    fontSize: "1.8rem",
+    fontSize: "1.7rem",
     '@media (max-width:800px)': {
       fontSize: '1.2rem',
     },

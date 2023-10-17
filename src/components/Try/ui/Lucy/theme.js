@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 export const THEME = createTheme({
   typography: {
     fontFamily: "'Orelega One', serif",
-    fontSize: 20,
+    fontSize: '1.8rem',
     '@media (max-width:600px)': {
       fontSize: '1.2rem',
     },

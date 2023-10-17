@@ -1,0 +1,25 @@
+.header img {
+    width: 200px;
+    height: 250px;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+.header h2{
+    vertical-align: middle;
+}
+
+.mirrored{
+    align-self:last baseline
+}
+
+.info{
+    align-self: center;
+    vertical-align: middle;
+}
