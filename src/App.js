@@ -4,7 +4,11 @@ import { THEME } from "./ui/Lucy/theme";
 import { THEME2 } from "./ui/Arturo/theme";
 import Gallery from "./components/gallery/Gallery";
 import Header from "./components/header/Header";
-import { Container } from "@mui/material";
+import { BottomNavigation, BottomNavigationAction, Container } from "@mui/material";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import WorkIcon from '@mui/icons-material/Work';
+import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 
 <style>
   @import
@@ -25,6 +29,7 @@ import { Container } from "@mui/material";
 function App() {
   const [backgroundImage, setBackgroundImage] = useState(null);
   const [pTheme, setPTheme] = useState(null);
+  const [value, setValue] = useState(0);
 
   const setBackgroundFromItem = (item) => {
     setBackgroundImage(item.img);
@@ -54,6 +59,17 @@ function App() {
             <Gallery onItemSelect={setBackgroundFromItem} />
           </Container>
         </div>
+        <BottomNavigation
+      showLabels
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+    >
+      <BottomNavigationAction label="About Me" icon={<SentimentSatisfiedAltIcon />} />
+      <BottomNavigationAction label="Career" icon={<WorkIcon />} />
+      <BottomNavigationAction label="Projects" icon={<LaptopChromebookIcon />} />
+    </BottomNavigation>
       </ThemeProvider>
     ):(
       <ThemeProvider theme={THEME}>
@@ -73,7 +89,18 @@ function App() {
           <Gallery onItemSelect={setBackgroundFromItem} />
         </Container>
       </div>
-    </ThemeProvider>
+      <BottomNavigation
+      showLabels
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+    >
+      <BottomNavigationAction label="About Me" icon={<SentimentSatisfiedAltIcon />} />
+      <BottomNavigationAction label="Career" icon={<WorkIcon />} />
+      <BottomNavigationAction label="Projects" icon={<LaptopChromebookIcon />} />
+    </BottomNavigation>
+      </ThemeProvider>
     )}
   </>
   );
