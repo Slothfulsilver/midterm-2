@@ -66,7 +66,6 @@ function Navbar({onViewChange, onUserChange}) {
                     variant="h6"
                     noWrap
                     component="a"
-                    href="#app-bar-with-responsive-menu"
                     sx={{
                     mr: 2,
                     display: { xs: 'none', md: 'flex' },
@@ -119,7 +118,6 @@ function Navbar({onViewChange, onUserChange}) {
                     variant="h5"
                     noWrap
                     component="a"
-                    href="#app-bar-with-responsive-menu"
                     sx={{
                     mr: 2,
                     display: { xs: 'flex', md: 'none' },

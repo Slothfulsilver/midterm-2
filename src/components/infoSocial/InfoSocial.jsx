@@ -12,7 +12,7 @@ import cv from "../../ui/Lucy/media/cvLucy.jpg";
  * Uses the current theme for the font color and font type
  * @returns <div> Career Summary + links
  */
-function InfoSocial() {
+function InfoSocial({selectedTheme}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
@@ -29,6 +29,11 @@ function InfoSocial() {
     return (
         //Info of the person and their social networks
         <div className="container">
+            {selectedTheme === "Arturo"? (
+                <>  
+            </>
+            ):(
+                <>
             <Typography color="primary" margin={3} marginY={8} sx={TITLE}>
                 Career Summary
             </Typography>
@@ -73,6 +78,8 @@ function InfoSocial() {
             >
                 <img src={cv}/>
             </Popover>
+            </>
+            )}
         </div>
     );
 };

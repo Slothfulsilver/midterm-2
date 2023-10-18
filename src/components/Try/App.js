@@ -61,9 +61,9 @@ function App() {
                     style={{ background: "linear-gradient(to bottom, #000000, #c272db" }}
                   >
                     {view === "Career"? (
-                    <InfoSocial />
+                    <InfoSocial selectedTheme={pTheme}/>
                     ): view === "Projects"? (
-                    <Gallery onItemSelect={setBackgroundFromItem} />
+                    <Gallery onItemSelect={setBackgroundFromItem} selectedTheme={pTheme} />
                     ):(
                     <Header onPersonSelect={changeTheme} selectedTheme={pTheme} />
                     )}
@@ -95,9 +95,9 @@ function App() {
           style={{ background: "linear-gradient(to bottom, #FFC0CB, #E0115F" }}
         >
           {view === "Career"? (
-          <InfoSocial />
+          <InfoSocial selectedTheme={pTheme}/>
           ): view === "Projects"? (
-          <Gallery onItemSelect={setBackgroundFromItem} />
+          <Gallery onItemSelect={setBackgroundFromItem} selectedTheme={pTheme}/>
           ):(
           <Header onPersonSelect={changeTheme} selectedTheme={pTheme}/>
                     )}
