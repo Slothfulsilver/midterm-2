@@ -38,9 +38,13 @@ function App() {
     setPTheme(selectedPerson);
   };
   
+  const changeComponent = (page) => {
+    setView(page);
+  };
+
   return (
     <>
-    <Navbar/>
+    <Navbar onUserChange={changeTheme} onViewChange={changeComponent}/>
     {pTheme === "Arturo"? (
       <ThemeProvider theme={THEME2}>
         <div

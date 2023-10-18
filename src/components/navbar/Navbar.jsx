@@ -11,40 +11,47 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { ThemeProvider } from '@emotion/react';
 import { THEME } from '../../ui/Lucy/theme';
 import photo from "../../ui/Lucy/media/Lucy.jpeg";
-import icon from "../../ui/Arturo/media/icon.png";
 
 const pages = ['About Me', 'Career', 'Projects'];
 
-function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+function Navbar({onViewChange, onUserChange}) {
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [activePage, setActivePage] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
+    const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleUser = () => {
-    if(anchorElUser=="Lucy"){
-        setAnchorElUser("Artu");
-    }else{
-        setAnchorElUser("Lucy");
-    }
-  };
-
-  const handleCloseNavMenu = () => {
+    };
+  
+    const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
+    };
 
+    const handleUser = () => {
+        if(anchorElUser=="Lucy"){
+            setAnchorElUser("Arturo");
+            onUserChange("Arturo");
+        }else{
+            setAnchorElUser("Lucy");
+            onUserChange("Lucy");
+        }
+    };
+
+    const changePage = (page) => {
+        setActivePage(page);
+        onViewChange(page);
+    }
 
   return (
     <ThemeProvider theme={THEME}>
         <AppBar position="static" sx={{backgroundColor:'#FFD9DF'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{backgroundColor:'#FFD9DF'}}>
-                <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                <AutoStoriesIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                 <Typography
                     variant="h6"
                     noWrap
@@ -91,13 +98,13 @@ function Navbar() {
                     }}
                     >
                     {pages.map((page) => (
-                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                        <MenuItem key={page} onClick={() => changePage(page)}>
                         <Typography textAlign="center">{page}</Typography>
                         </MenuItem>
                     ))}
                     </Menu>
                 </Box>
-                <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                <AutoStoriesIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                 <Typography
                     variant="h5"
                     noWrap
@@ -119,7 +126,7 @@ function Navbar() {
                     {pages.map((page) => (
                     <Button
                         key={page}
-                        onClick={handleCloseNavMenu}
+                        onClick={() => changePage(page)}
                         sx={{ my: 2, display: 'block' }}
                     >
                         {page}
