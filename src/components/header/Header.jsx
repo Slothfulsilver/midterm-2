@@ -1,8 +1,10 @@
+import * as React from 'react';
 import "./Header.css";
 import photo from "../../ui/Lucy/media/Lucy.jpeg";
 import photo2 from "../../ui/Arturo/media/icon.png";
-import { Typography, Button } from "@mui/material";
+import { Alert, Badge, Button, CircularProgress, Popover, Typography } from '@mui/material';
 import { TITLE, TEXT, TITLE2, TEXT2 } from "../../ui/styles";
+import MailIcon from '@mui/icons-material/Mail';
 import { useState } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import { THEME } from "../../ui/Lucy/theme";
@@ -21,7 +23,10 @@ import { THEME2 } from "../../ui/Arturo/theme";
 
 function Header({ onPersonSelect, selectedTheme}) {
   const [selectedPerson, setSelectedPerson] = useState(null);
-
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
   const handleClickLucy = () => {
     setSelectedPerson("Lucy");
     onPersonSelect("Lucy");
@@ -30,6 +35,14 @@ function Header({ onPersonSelect, selectedTheme}) {
   const handleClickArtu = () => {
     setSelectedPerson("Arturo");
     onPersonSelect("Arturo");
+  };
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -67,6 +80,28 @@ function Header({ onPersonSelect, selectedTheme}) {
             <br/> Surprisingly, my favourite color isn't pink.
           </Typography>
         </div>
+        <Button aria-describedby={id} variant="contained" onClick={handleClick}>
+                CONGRATULATIONS YOU WON a FREE IPOD NANO
+                <Badge badgeContent={999} color="secondary">
+                    <MailIcon color="action" />
+                </Badge>
+            </Button>
+            <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+            }}
+            >
+            <Alert severity="error">Take action</Alert>
+            <Typography sx={{ p: 2 }}>Your computer has been INFECTED, PAY $9999 to get your DATA back!!!</Typography>
+            </Popover>
+            <Typography color="secondary" marginInline={3} marginY={6} sx={TEXT}>
+                <CircularProgress />...       Downloading the book of War and Peace by Leo Tolstoy and converting it to hex using the Big Mac Index
+            </Typography>
       </ThemeProvider>)}
     </div>
   );
