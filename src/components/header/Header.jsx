@@ -9,6 +9,9 @@ import { useState } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import { THEME } from "../../ui/Lucy/theme";
 import { THEME2 } from "../../ui/Arturo/theme";
+import { Container } from '@mui/system';
+import Stack from '@mui/material/Stack';
+
 
 /**
  * Profile Header
@@ -46,9 +49,11 @@ function Header({ onPersonSelect, selectedTheme}) {
   };
 
   return (
+    <Container>
+
     <div className="header">
       {selectedTheme === "Arturo"? (
-      <ThemeProvider theme={THEME2}>
+        <ThemeProvider theme={THEME2}>
         <div className="info">
           <Typography color="primary" margin={3} marginTop={1} sx={TITLE2}>
             Arturo García Brambila
@@ -65,22 +70,37 @@ function Header({ onPersonSelect, selectedTheme}) {
         </Button>
       </ThemeProvider>
       ):(
-      <ThemeProvider theme={THEME}>
+        <ThemeProvider theme={THEME}>
+        <Stack spacing={2}>
         <Button onClick={handleClickLucy}>
           <img src={photo} alt="Lucy" />
         </Button>
+        <Container>
         <div className="info">
           <Typography color="primary" margin={3} marginTop={1} sx={TITLE}>
             Celia Lucia Castañeda Arizaga
           </Typography>
-          <Typography color="secondary" marginInline={3} sx={TEXT}>
+          <Typography color="secondary" marginInline={3} marginY={2}  sx={TEXT}>
             ｡ﾟ•┈୨♡୧┈• ｡ﾟ
             <br/> Hi! I´m Lucy :) 
             <br/> I love learning and giving my all! Some of my hobbies are dancing, drawing and lifting weights.
             <br/> Surprisingly, my favourite color isn't pink.
           </Typography>
+          <Typography color="secondary" marginInline={3} marginY={2} sx={TEXT}>
+            ｡ﾟ•┈୨♡୧┈• ｡ﾟ ｡ﾟ•┈୨♡୧┈• ｡ﾟ ｡ﾟ•┈୨♡୧┈• ｡ﾟ
+            <li> My favourite band is Gorillaz
+            </li><li> I do not like web development :)
+            </li><li> I am scared of heights even though I am tall 
+            </li><li> Nintendo is better than Sega
+            </li>
+          </Typography>
+          <Typography color="secondary" marginInline={3} marginY={2}  sx={TEXT}>
+            GIFTS:
+          </Typography>
         </div>
-        <Button aria-describedby={id} variant="contained" onClick={handleClick}>
+        </Container>
+        <Container>
+          <Button aria-describedby={id} variant="contained" onClick={handleClick}>
                 CONGRATULATIONS YOU WON a FREE IPOD NANO
                 <Badge badgeContent={999} color="secondary">
                     <MailIcon color="action" />
@@ -92,8 +112,8 @@ function Header({ onPersonSelect, selectedTheme}) {
             anchorEl={anchorEl}
             onClose={handleClose}
             anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+              vertical: 'bottom',
+              horizontal: 'left',
             }}
             >
             <Alert severity="error">Take action</Alert>
@@ -102,8 +122,11 @@ function Header({ onPersonSelect, selectedTheme}) {
             <Typography color="secondary" marginInline={3} marginY={6} sx={TEXT}>
                 <CircularProgress />...       Downloading the book of War and Peace by Leo Tolstoy and converting it to hex using the Big Mac Index
             </Typography>
+          </Container>
+        </Stack>
       </ThemeProvider>)}
     </div>
+    </Container>
   );
 }
 

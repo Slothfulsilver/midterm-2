@@ -58,7 +58,7 @@ function App() {
                 >
                   <Container
                     maxWidth="xl"
-                    style={{ background: "linear-gradient(to bottom, #000000, #F18FA0" }}
+                    style={{ background: "linear-gradient(to bottom, #000000, #c272db" }}
                   >
                     {view === "Career"? (
                     <InfoSocial />

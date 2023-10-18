@@ -15,7 +15,7 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { ThemeProvider } from '@emotion/react';
 import { THEME } from '../../ui/Lucy/theme';
 import photo from "../../ui/Lucy/media/Lucy.jpeg";
-import photo2 from "../../ui/Arturo/media/icon.png";
+import photo2 from "../../ui/Arturo/media/icon.png";  
 
 const pages = ['About Me', 'Career', 'Projects'];
 
@@ -52,7 +52,7 @@ function Navbar({onViewChange, onUserChange}) {
         <AppBar position="static" sx={{backgroundColor:'#FFD9DF'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{backgroundColor:'#FFD9DF'}}>
-                <AutoStoriesIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                <AutoStoriesIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: "#E0115F" }} />
                 <Typography
                     variant="h6"
                     noWrap
@@ -105,7 +105,7 @@ function Navbar({onViewChange, onUserChange}) {
                     ))}
                     </Menu>
                 </Box>
-                <AutoStoriesIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                <AutoStoriesIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, color: "#E0115F" }} />
                 <Typography
                     variant="h5"
                     noWrap
