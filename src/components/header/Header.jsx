@@ -1,5 +1,5 @@
 import * as React from 'react';
-import "./Header.css";
+import "./header.css";
 import photo from "../../ui/Lucy/media/Lucy.jpeg";
 import photo2 from "../../ui/Arturo/media/icon.png";
 import { Alert, Badge, Button, CircularProgress, Popover, Typography } from '@mui/material';
