@@ -59,7 +59,7 @@ function InfoSocial() {
             <br/>
             <br/>
             <Button aria-describedby={id} variant="contained" onClick={handleClick}>
-                Free iPod nano
+                CONGRATULATIONS YOU WON a FREE IPOD NANO
                 <Badge badgeContent={999} color="secondary">
                     <MailIcon color="action" />
                 </Badge>

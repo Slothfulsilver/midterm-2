@@ -6,6 +6,7 @@ import Gallery from "./components/gallery/Gallery";
 import Header from "./components/header/Header";
 import { BottomNavigation, BottomNavigationAction, Container } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Navbar from "./components/navbar/Navbar";
 
 <style>
   @import
@@ -26,6 +27,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 function App() {
   const [backgroundImage, setBackgroundImage] = useState(null);
   const [pTheme, setPTheme] = useState(null);
+  const [view, setView] = useState(null);
   const [value, setValue] = useState(0);
 
   const setBackgroundFromItem = (item) => {
@@ -38,6 +40,7 @@ function App() {
   
   return (
     <>
+    <Navbar/>
     {pTheme === "Arturo"? (
       <ThemeProvider theme={THEME2}>
         <div
