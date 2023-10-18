@@ -6,6 +6,7 @@ import raytracer from "../../ui/Lucy/media/RayTracer1.jpeg";
 import riiaa from "../../ui/Lucy/media/riiaa.jpg";
 import covid from "../../ui/Lucy/media/covid.png";
 import snight from "../../ui/Lucy/media/somniumnight.png";
+import bricky from "../../ui/Lucy/media/brickyWars.png";
 
 export const itemData = [
   {
@@ -71,5 +72,13 @@ export const itemData = [
     date: "2020 - 2021",
     description:
       'Participated in the "Reunión Internacional de Inteligencia Artificial (RIIAA) 2021" as part of the organizing committee. Managed entry tickets and invited various universities and communities to talk at the event.',
+  },
+  {
+    img: bricky,
+    title: "Bricky Wars",
+    subtitle: "4 Player Videogame",
+    date: "September 2022",
+    description:
+      'Developed a 2D 4-Player Videogame using Unity. My team was: Eduardo González, Samuel Langarica and Sofía Piña. The game consisted of a multiplayer battle with different stages and power-ups. The player must jump on top of another player to kill them and get their points. Users could buy upgrades for the final battle with their points.',
   },
 ];

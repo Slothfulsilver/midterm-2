@@ -48,7 +48,7 @@ export const TITLE2 = {
     marginBottom: 1,
     padding: "1px 16px",
     borderRadius: "16px",
-    backgroundColor: "#000000",
+    backgroundColor: "#FFD9DF",
     fontWeight: "bold",
   },
 };
@@ -62,7 +62,7 @@ export const TEXT2 = {
     marginBottom: 1,
     padding: "2px 10px",
     borderRadius: "16px",
-    backgroundColor: "#000000",
+    backgroundColor: "#FFD9DF",
     fontWeight: "bold",
   },
 };

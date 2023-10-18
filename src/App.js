@@ -7,6 +7,7 @@ import Header from "./components/header/Header";
 import { BottomNavigation, BottomNavigationAction, Container } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Navbar from "./components/navbar/Navbar";
+import InfoSocial from "./components/infoSocial/InfoSocial";
 
 <style>
   @import
@@ -59,21 +60,23 @@ function App() {
                     maxWidth="xl"
                     style={{ background: "linear-gradient(to bottom, #000000, #F18FA0" }}
                   >
-                    {view === "About Me"? (
-                    <Header onPersonSelect={changeTheme} />
+                    {view === "Career"? (
+                    <InfoSocial />
                     ): view === "Projects"? (
                     <Gallery onItemSelect={setBackgroundFromItem} />
-                    ):(<></>)}
-
+                    ):(
+                    <Header onPersonSelect={changeTheme} selectedTheme={pTheme} />
+                    )}
                   </Container>
                 </div>
                 <BottomNavigation
-              showLabels
-              value={value}
-              onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
-            >
+                sx={{backgroundColor: "#FFD9DF", marginTop: "1rem"}}
+                showLabels
+                value={value}
+                onChange={(event, newValue) => {
+                  setValue(newValue);
+                }}
+              >
               <BottomNavigationAction label="Like" icon={<FavoriteIcon />} />
             </BottomNavigation>
       </ThemeProvider>
@@ -91,11 +94,17 @@ function App() {
           maxWidth="xl"
           style={{ background: "linear-gradient(to bottom, #FFC0CB, #E0115F" }}
         >
-          <Header onPersonSelect={changeTheme} />
+          {view === "Career"? (
+          <InfoSocial />
+          ): view === "Projects"? (
           <Gallery onItemSelect={setBackgroundFromItem} />
+          ):(
+          <Header onPersonSelect={changeTheme} selectedTheme={pTheme}/>
+                    )}
         </Container>
       </div>
       <BottomNavigation
+      sx={{backgroundColor: "#FFD9DF", marginTop: "1rem"}}
       showLabels
       value={value}
       onChange={(event, newValue) => {

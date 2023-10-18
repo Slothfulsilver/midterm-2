@@ -8,7 +8,6 @@ import IconButton from "@mui/material/IconButton";
 import { HOVER, TITLE } from "../../ui/styles.js";
 import { itemData } from "./lucyData.js";
 import Project from "../project/Project.jsx";
-import InfoSocial from "../infoSocial/InfoSocial";
 import "./Gallery.css"
 import { Container } from "@mui/material";
 
@@ -25,6 +24,7 @@ import { Container } from "@mui/material";
 
 export default function Gallery({ onItemSelect }) {
   const [selectedItem, setSelectedItem] = useState(null);
+  const bottomRef = React.useRef();
 
   const handleImageClick = (item) => {
     setSelectedItem(item);
@@ -35,17 +35,22 @@ export default function Gallery({ onItemSelect }) {
     setSelectedItem(null);
   };
 
+  const handleScroll = () => {
+    bottomRef.current.scrollIntoView();
+  }
+
   return (
     <div>
-      <Container maxWidth={false} sx={{ display: 'flex' }}>
+      <Container maxWidth={false} sx={{ display: 'flex', flexWrap: 'nowrap', transform: 'translateZ(0)' }}>
       <ImageList
         sx={{
-          width: 500,
+          width: "70rem",
           borderRadius: "16px",
           padding: 3,
         }}
+        cols={4}
       >
-        <ListSubheader component="div" sx={TITLE} color="primary">
+        <ListSubheader component="div" sx={TITLE} color="primary" cols={10}>
           Projects
         </ListSubheader>
         <ImageListItem key="Subheader" cols={2}></ImageListItem>
@@ -77,6 +82,7 @@ export default function Gallery({ onItemSelect }) {
                     borderRadius: "16px",
                   }}
                   aria-label={`info about ${item.title}`}
+                  onClick={handleScroll}
                 ></IconButton>
               }
               sx={{ borderRadius: "16px" }}
@@ -84,8 +90,6 @@ export default function Gallery({ onItemSelect }) {
           </ImageListItem>
         ))}
       </ImageList>
-      <InfoSocial/>
-
       </Container>
 
       {selectedItem && (
