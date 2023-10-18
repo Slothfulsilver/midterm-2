@@ -5,8 +5,9 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
-import { HOVER, TITLE } from "../../ui/styles.js";
+import { HOVER, TITLE, TITLE2 } from "../../ui/styles.js";
 import { itemData } from "./lucyData.js";
+import { itemData2 } from "./arturoData.js";
 import Project from "../project/Project.jsx";
 import "./Gallery.css"
 import { Container } from "@mui/material";
@@ -22,7 +23,7 @@ import { Container } from "@mui/material";
  * @returns <ThemeProvider> Gallery of Images
  */
 
-export default function Gallery({ onItemSelect }) {
+export default function Gallery({ onItemSelect, selectedTheme }) {
   const [selectedItem, setSelectedItem] = useState(null);
   const bottomRef = React.useRef();
 
@@ -50,11 +51,17 @@ export default function Gallery({ onItemSelect }) {
         }}
         cols={4}
       >
-        <ListSubheader component="div" sx={TITLE} color="primary" cols={10}>
+        {selectedTheme === "Arturo"? (
+        <ListSubheader component="div" sx={TITLE2} color="primary" cols={10}>
           Projects
+        </ListSubheader>):(
+        <ListSubheader component="div" sx={TITLE} color="primary" cols={10}>
+        Projects
         </ListSubheader>
+        )}
         <ImageListItem key="Subheader" cols={2}></ImageListItem>
-        {itemData.map((item) => (
+        {selectedTheme === "Arturo"? (
+        itemData2.map((item) => (
           <ImageListItem
             sx={HOVER}
             key={item.img}
@@ -88,7 +95,44 @@ export default function Gallery({ onItemSelect }) {
               sx={{ borderRadius: "16px" }}
             />
           </ImageListItem>
-        ))}
+        ))
+        ):(
+          itemData.map((item) => (
+            <ImageListItem
+              sx={HOVER}
+              key={item.img}
+              title={item.title}
+              subtitle={item.subtitle}
+              img={item.img}
+              date={item.date}
+              description={item.description}
+              onClick={() => handleImageClick(item)}
+            >
+              <img
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                alt={item.title}
+                loading="lazy"
+                style={{ borderRadius: "16px" }}
+              />
+              <ImageListItemBar
+                title={item.title}
+                subtitle={item.subtitle}
+                actionIcon={
+                  <IconButton
+                    sx={{
+                      color: "rgba(255, 255, 255, 0.54)",
+                      borderRadius: "16px",
+                    }}
+                    aria-label={`info about ${item.title}`}
+                    onClick={handleScroll}
+                  ></IconButton>
+                }
+                sx={{ borderRadius: "16px" }}
+              />
+            </ImageListItem>
+          ))
+        )}
       </ImageList>
       </Container>
 
