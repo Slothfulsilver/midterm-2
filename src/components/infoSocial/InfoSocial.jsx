@@ -30,7 +30,20 @@ function InfoSocial({selectedTheme}) {
         //Info of the person and their social networks
         <div className="container">
             {selectedTheme === "Arturo"? (
-                <>  
+            <>
+            <Typography color="primary" margin={3} marginY={8} sx={TITLE}>
+                Career Summary
+            </Typography>
+            <Typography color="secondary" marginInline={3} marginY={4} sx={TEXT}>
+            <br/> Universidad Panamericana Guadalajara (2019-2025)
+            <br/> Bachelor of Digital Animation
+            </Typography>
+            <Typography color="secondary" marginInline={3} marginY={6} sx={TEXT}>
+            <ul>
+                <li><a href="https://github.com/Slothfulsilver">Github</a></li>
+                <li><a href="https://www.instagram.com/arturo.g.bram/">Instagram</a></li>
+            </ul>
+            </Typography>
             </>
             ):(
                 <>

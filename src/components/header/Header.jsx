@@ -59,9 +59,10 @@ function Header({ onPersonSelect, selectedTheme}) {
           </Typography>
           <Typography color="secondary" marginInline={3} sx={TEXT2}>
             ARTURO INFO
-            <br/> Hi! I´m Lucy :) 
-            <br/> I love learning and giving my all! Some of my hobbies are dancing, drawing and lifting weights.
-            <br/> Surprisingly, my favourite color isn't pink.
+            <br/> Hi! I´m Arturo 
+            <br/> I study Digital Animation at Universidad Panamericana.
+            <br/> My hobbies are drawing, videogames and listening music.
+            <br/>And doing this I learned to like, just a bit, WEB design
           </Typography>
         </div>
         <Button disabled onClick={handleClickArtu}>
