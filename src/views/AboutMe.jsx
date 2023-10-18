@@ -1,4 +1,4 @@
-import Header from "../components/Header/header.jsx";
+import Header from "../components/header/Header";
 
 function About(){
     return(

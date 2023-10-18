@@ -1,4 +1,4 @@
-import Header from "../components/Header/header";
+import Header from "../components/header/Header";
 import "../components/SCSS/Home.scss"
 import lucy from "../components/Imgs/Lucy/IMGS/Lucy.jpeg"
 
