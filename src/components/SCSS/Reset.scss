@@ -19,8 +19,16 @@ body{
     }
 }
 
-.flex{
-    place-items: center;
-    height: 100%;
-    text-align: center;
+.arturo{
+    font-Family: 'Delicious Handrawn';
+    font-weight: 600;
+    font-size: 1.5rem;
+    .text{
+        color:$LucyPrimary; 
+        
+    }
+
+    .background{
+        background-color: $LucySecondary;
+    }
 }

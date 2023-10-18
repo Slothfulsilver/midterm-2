@@ -1,12 +1,16 @@
 @use "./_Colors" as *;
 
-body{
+@mixin gradient($direction, $list){
+    background: -webkit-linear-gradient($direction, $list);
+}
+
+body.lucy{
     background-color: $LucyBackground;
 }
 
 .home{
     img:first-of-type{
-        width: 30%;
+        width: 20vh;
         border: 5px solid $LucyPrimary;
         box-shadow: 5px 5px 10px $LucySecondary;
         margin: 1px;
@@ -17,5 +21,13 @@ body{
         margin-top: 1.2rem;
         border: 5px solid $LucyPrimary;
 
+        h1{
+            color: $LucySecondary;
+        }
+
     }
+}
+
+@media screen and (max-width: 40em) {
+    
 }

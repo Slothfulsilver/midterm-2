@@ -3,7 +3,21 @@ $Pastel: #b54e5e;
 $LightPink: #FFC0CB;
 $Cream: #FFD9DF;
 
+$Purple: #e490ff;
+$Darkurple: #5B3A65;
+$lightYellow: #FFFADE;
+$Yellow: #FFF7D0;
+
+
+$ArturoPrimary:$Purple;
+$ArturoSecondary: $Darkurple;
+$ArturoBackground: $lightYellow;
+$ArturoContrast: $Yellow;
+
+
 $LucyPrimary:$Pink;
 $LucySecondary:$Pastel;
 $LucyBackground:$LightPink;
-$LucyConstrast:$Cream
+$LucyConstrast:$Cream;
+
+$LucyGradient: $LucyPrimary, $LucySecondary;

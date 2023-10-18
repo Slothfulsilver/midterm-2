@@ -1,18 +1,8 @@
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$Main:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
-
+@use "../SCSS/Colors" as *;
 @import '~bootstrap/scss/bootstrap';
 
 .navbar{
-    border-bottom: 5px solid $Main;
+    border-bottom: 5px solid;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -23,21 +13,15 @@ $cyan:    #0dcaf0 !default;
         font-size: 25px;
     }
     
-    .navbar-collapse{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
 
-    }
     .nav-link{
         margin-left: 1rem;
-        color: $secondary;
     }
-    
+        
     img:first-of-type{
         width: 32px;
         height: 32px;
         border-radius: 50%;
-    }
+        }
+    
 }
-
