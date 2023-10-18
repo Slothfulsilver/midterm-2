@@ -15,6 +15,7 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { ThemeProvider } from '@emotion/react';
 import { THEME } from '../../ui/Lucy/theme';
 import photo from "../../ui/Lucy/media/Lucy.jpeg";
+import photo2 from "../../ui/Arturo/media/icon.png";
 
 const pages = ['About Me', 'Career', 'Projects'];
 
@@ -32,7 +33,7 @@ function Navbar({onViewChange, onUserChange}) {
     };
 
     const handleUser = () => {
-        if(anchorElUser=="Lucy"){
+        if(anchorElUser==="Lucy"){
             setAnchorElUser("Arturo");
             onUserChange("Arturo");
         }else{
@@ -137,7 +138,11 @@ function Navbar({onViewChange, onUserChange}) {
                 <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Change Profile">
                     <IconButton onClick={handleUser} sx={{ p: 0 }}>
+                    {anchorElUser === "Arturo"? (
+                        <Avatar alt="Remy Sharp" src={photo2} />
+                        ):(
                         <Avatar alt="Remy Sharp" src={photo} />
+                    )}
                     </IconButton>
                     </Tooltip>
                 </Box>
