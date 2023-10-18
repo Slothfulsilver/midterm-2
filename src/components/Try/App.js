@@ -6,6 +6,8 @@ import Gallery from "../gallery/Gallery";
 //import Header from "../header/Header";
 import { BottomNavigation, BottomNavigationAction, Container } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Navbar from "./components/navbar/Navbar";
+import InfoSocial from "./components/infoSocial/InfoSocial";
 
 <style>
   @import
@@ -26,6 +28,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 function App() {
   const [backgroundImage, setBackgroundImage] = useState(null);
   const [pTheme, setPTheme] = useState(null);
+  const [view, setView] = useState(null);
   const [value, setValue] = useState(0);
 
   const setBackgroundFromItem = (item) => {
@@ -36,35 +39,46 @@ function App() {
     setPTheme(selectedPerson);
   };
   
+  const changeComponent = (page) => {
+    setView(page);
+  };
+
   return (
     <>
+    <Navbar onUserChange={changeTheme} onViewChange={changeComponent}/>
     {pTheme === "Arturo"? (
       <ThemeProvider theme={THEME2}>
-        <div
-          className="App"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: "repeat",
-            backgroundSize: "600px",
-          }}
-        >
-          <Container
-            maxWidth="xl"
-            style={{ background: "linear-gradient(to bottom, #000000, #F18FA0" }}
-          >
-            <Header onPersonSelect={changeTheme} />
-            <Gallery onItemSelect={setBackgroundFromItem} />
-          </Container>
-        </div>
-        <BottomNavigation
-      showLabels
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-    >
-      <BottomNavigationAction label="Like" icon={<FavoriteIcon />} />
-    </BottomNavigation>
+                <div
+                  className="App"
+                  style={{
+                    backgroundImage: `url(${backgroundImage})`,
+                    backgroundRepeat: "repeat",
+                    backgroundSize: "600px",
+                  }}
+                >
+                  <Container
+                    maxWidth="xl"
+                    style={{ background: "linear-gradient(to bottom, #000000, #c272db" }}
+                  >
+                    {view === "Career"? (
+                    <InfoSocial />
+                    ): view === "Projects"? (
+                    <Gallery onItemSelect={setBackgroundFromItem} />
+                    ):(
+                    <Header onPersonSelect={changeTheme} selectedTheme={pTheme} />
+                    )}
+                  </Container>
+                </div>
+                <BottomNavigation
+                sx={{backgroundColor: "#FFD9DF", marginTop: "1rem"}}
+                showLabels
+                value={value}
+                onChange={(event, newValue) => {
+                  setValue(newValue);
+                }}
+              >
+              <BottomNavigationAction label="Like" icon={<FavoriteIcon />} />
+            </BottomNavigation>
       </ThemeProvider>
     ):(
       <ThemeProvider theme={THEME}>
@@ -80,11 +94,17 @@ function App() {
           maxWidth="xl"
           style={{ background: "linear-gradient(to bottom, #FFC0CB, #E0115F" }}
         >
-          <Header onPersonSelect={changeTheme} />
+          {view === "Career"? (
+          <InfoSocial />
+          ): view === "Projects"? (
           <Gallery onItemSelect={setBackgroundFromItem} />
+          ):(
+          <Header onPersonSelect={changeTheme} selectedTheme={pTheme}/>
+                    )}
         </Container>
       </div>
       <BottomNavigation
+      sx={{backgroundColor: "#FFD9DF", marginTop: "1rem"}}
       showLabels
       value={value}
       onChange={(event, newValue) => {
