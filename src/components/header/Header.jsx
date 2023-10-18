@@ -18,7 +18,6 @@ import Stack from '@mui/material/Stack';
  * @author Arturo García Brambila
  * @author Celia Lucia Castañeda Arizaga
  * Includes both author's profile pictures, full names and brief introduction
- * When a profile picture is clicked on, changes the theme to the person clicked
  * Uses the current theme for the font color and font type
  * @param onPersonSelect state function that changes when a profile picture is clicked on
  * @returns <div> Header with both profiles´ basic info
@@ -65,14 +64,14 @@ function Header({ onPersonSelect, selectedTheme}) {
             <br/> Surprisingly, my favourite color isn't pink.
           </Typography>
         </div>
-        <Button onClick={handleClickArtu}>
+        <Button disabled onClick={handleClickArtu}>
           <img src={photo2} alt="Arturo" />
         </Button>
       </ThemeProvider>
       ):(
         <ThemeProvider theme={THEME}>
         <Stack spacing={2}>
-        <Button onClick={handleClickLucy}>
+        <Button disabled onClick={handleClickLucy}>
           <img src={photo} alt="Lucy" />
         </Button>
         <Container>

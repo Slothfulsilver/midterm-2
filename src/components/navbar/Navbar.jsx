@@ -17,6 +17,15 @@ import { THEME } from '../../ui/Lucy/theme';
 import photo from "../../ui/Lucy/media/Lucy.jpeg";
 import photo2 from "../../ui/Arturo/media/icon.png";  
 
+/**
+ * Navigation Bar
+ * @author Celia Lucia Castañeda Arizaga
+ * Changes the views (pages) variables to know which button was clicked and passes the current page value
+ * When a profile picture is clicked on, changes the image and theme to the person on the navbar
+ * @param {onViewChange, onUserChange} state funhctions when view changes or person's theme changes
+ * @returns ThemeProvider navbar
+*/
+
 const pages = ['About Me', 'Career', 'Projects'];
 
 function Navbar({onViewChange, onUserChange}) {
