@@ -1,3 +1,21 @@
+@use "./_Colors" as *;
+
 body{
-    display: inline-flex;
+    background-color: $LucyBackground;
+}
+
+.home{
+    img:first-of-type{
+        width: 30%;
+        border: 5px solid $LucyPrimary;
+        box-shadow: 5px 5px 10px $LucySecondary;
+        margin: 1px;
+    }
+
+    .description{
+        width: fit-content;
+        margin-top: 1.2rem;
+        border: 5px solid $LucyPrimary;
+
+    }
 }

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import { THEME } from "./ui/Lucy/theme";
 import { THEME2 } from "./ui/Arturo/theme";
-import Gallery from "./components/gallery/Gallery";
-import Header from "./components/header/Header";
+import Gallery from "../gallery/Gallery";
+//import Header from "../header/Header";
 import { BottomNavigation, BottomNavigationAction, Container } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 

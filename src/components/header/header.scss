@@ -1,7 +1,7 @@
 $blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
+$Main:    #d63384 !default;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
@@ -12,15 +12,32 @@ $cyan:    #0dcaf0 !default;
 @import '~bootstrap/scss/bootstrap';
 
 .navbar{
-    border-bottom: 5px solid $pink;
+    border-bottom: 5px solid $Main;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .navbar-brand{
+        color: $pink;
+        font-size: 25px;
+    }
+    
+    .navbar-collapse{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    .nav-link{
+        margin-left: 1rem;
+        color: $secondary;
+    }
+    
+    img:first-of-type{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
 }
 
-.navbar-brand{
-    color: $pink;
-    font-size: 25px;
-}
-
-.nav-link{
-    float: inline-end;
-    color: $secondary;
-}

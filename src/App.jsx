@@ -4,6 +4,7 @@ import Projects from "./views/Projects";
 
 import "./components/SCSS/App.scss"
 import About from "./views/AboutMe";
+import Career from "./views/Career";
 
 //By Lucia and Arturo
 /* 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/projects" element={<Projects/>}/>
           <Route path="/about" element={<About/>}/>
+          <Route path="/career" element={<Career/>}/>
         </Routes>
       </BrowserRouter>
     </div>
