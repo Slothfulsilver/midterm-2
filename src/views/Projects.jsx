@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Header from "../components/Header/header";
+import Header from "../components/header/Header";
 
 function Projects(){
     return(
