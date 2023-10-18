@@ -47,31 +47,35 @@ function App() {
     <Navbar onUserChange={changeTheme} onViewChange={changeComponent}/>
     {pTheme === "Arturo"? (
       <ThemeProvider theme={THEME2}>
-        <div
-          className="App"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: "repeat",
-            backgroundSize: "600px",
-          }}
-        >
-          <Container
-            maxWidth="xl"
-            style={{ background: "linear-gradient(to bottom, #000000, #F18FA0" }}
-          >
-            <Header onPersonSelect={changeTheme} />
-            <Gallery onItemSelect={setBackgroundFromItem} />
-          </Container>
-        </div>
-        <BottomNavigation
-      showLabels
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-    >
-      <BottomNavigationAction label="Like" icon={<FavoriteIcon />} />
-    </BottomNavigation>
+                <div
+                  className="App"
+                  style={{
+                    backgroundImage: `url(${backgroundImage})`,
+                    backgroundRepeat: "repeat",
+                    backgroundSize: "600px",
+                  }}
+                >
+                  <Container
+                    maxWidth="xl"
+                    style={{ background: "linear-gradient(to bottom, #000000, #F18FA0" }}
+                  >
+                    {view === "About Me"? (
+                    <Header onPersonSelect={changeTheme} />
+                    ): view === "Projects"? (
+                    <Gallery onItemSelect={setBackgroundFromItem} />
+                    ):(<></>)}
+
+                  </Container>
+                </div>
+                <BottomNavigation
+              showLabels
+              value={value}
+              onChange={(event, newValue) => {
+                setValue(newValue);
+              }}
+            >
+              <BottomNavigationAction label="Like" icon={<FavoriteIcon />} />
+            </BottomNavigation>
       </ThemeProvider>
     ):(
       <ThemeProvider theme={THEME}>
